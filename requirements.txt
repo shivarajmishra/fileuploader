@@ -1,0 +1,7 @@
+flask
+werkzeug
+docx2pdf
+PyPDF2
+reportlab
+pillow
+docx
