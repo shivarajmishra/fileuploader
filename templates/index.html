@@ -4,13 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload DOCX for PDF Conversion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input, button {
+            padding: 10px;
+            margin-top: 10px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+        #message {
+            margin-top: 20px;
+            color: #007BFF;
+        }
+    </style>
 </head>
 <body>
     <h1>Upload DOCX File</h1>
     <form action="/upload" method="POST" enctype="multipart/form-data">
         <label for="file">Choose DOCX File</label>
-        <input type="file" name="file" accept=".docx" required>
+        <input type="file" id="file" name="file" accept=".docx" required>
         <button type="submit">Upload and Convert</button>
     </form>
+    <div id="message"></div>
+    <footer>
+        <p>&copy; 2024 Global Health Equity</p>
+    </footer>
+    <script>
+        const form = document.querySelector('form');
+        form.onsubmit = () => {
+            document.getElementById('message').innerText = "Uploading... Please wait.";
+        };
+    </script>
 </body>
 </html>
