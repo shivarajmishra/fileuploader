@@ -130,6 +130,7 @@ def add_images_and_footnote(input_pdf, output_pdf, footnote_text, header_image_p
 # Web Routes
 @app.route('/')
 def index():
+    print("Index route accessed")  # Debug message
     return render_template('index.html')
 
 @app.route('/upload', methods=['POST'])
@@ -167,4 +168,4 @@ def upload_file():
     return 'Invalid file format'
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
